@@ -326,6 +326,9 @@
                         <li {{ (Request::is('*documentation') ? 'class="active"' : '') }}>
                             <a href="{{ url ('documentation') }}"><i class="fa fa-file-word-o fa-fw"></i> Documentation</a>
                         </li>
+                        <li {{ (Request::is('*documentos') ? 'class="active"' : '') }}>
+                            <a href="{{ url ('documentos') }}"><i class="fa fa-book fa-fw"></i> ABM Documentación</a>
+                        </li>
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->

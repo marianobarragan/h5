@@ -76,3 +76,23 @@ Route::get('/documentation', function()
 {
 	return view('documentation');
 });
+
+Route::get('/documentos', function()
+{
+	return view('documentos');
+});
+
+Route::get('/documentosAlta', function()
+{
+	return view('documentosAlta');
+});
+
+Route::get('/documentosBaja', function()
+{
+	return view('documentosBaja');
+});
+
+Route::get('/documentosModificacion', function()
+{
+	return view('documentosModificacion');
+});
