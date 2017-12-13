@@ -96,3 +96,7 @@ Route::get('/documentosModificacion', function()
 {
 	return view('documentosModificacion');
 });
+
+Route::get('/tasks/', 'TasksController@index');
+
+Route::get('/tasks/{task_id}', 'TasksController@show');
