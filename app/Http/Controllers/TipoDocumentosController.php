@@ -9,7 +9,9 @@ class TipoDocumentosController extends Controller
 {
     public function index(){
     	
-    	$documentos = TipoDocumento::all();
+    	//$documentos = TipoDocumento::orderBy('creado', 'DESC')->get();	//MANERA ALTERNATIVA
+
+    	$documentos = TipoDocumento::oldest(TipoDocumento::CREATED_AT)->get();
     	
     	return view('tipoDocumentos.documentos',compact( 'documentos'));
     	

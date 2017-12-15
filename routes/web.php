@@ -107,3 +107,8 @@ Route::get('/documentos/{tipoDocumento}', 'TipoDocumentosController@show');
 /***************************************************/
 
 Route::get('/blog', 'PostsController@index');
+
+Route::get('/date', function()
+{
+	return view('laracasts.datepicker');
+});
