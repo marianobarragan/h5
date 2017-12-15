@@ -11,7 +11,7 @@
 		
 		<div class ="form-group" style="padding-bottom:60px">
 			<div class="form-group col-lg-12">   
-	            <input class="form-control" placeholder="Ingrese el documento" name="tipo_documento" id="tipo_documento">
+	            <input class="form-control" placeholder="Ingrese el documento" name="tipo_documento" id="tipo_documento" >
 	        </div>
 		</div>
 		
@@ -25,8 +25,12 @@
 
 	</form>
 
+	
+
 	@endsection
+
 	@include('widgets.panel', array('class'=>'primary', 'header'=>true, 'as'=>'panel2'))
+	@include('layouts.errors')
 </div>
 
 @stop

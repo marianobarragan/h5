@@ -28,6 +28,11 @@ class TipoDocumentosController extends Controller
     public function store(Request $request)
     {
         // Validate the request...
+    	$this->validate(request(),[
+    		'tipo_documento' => 'required'
+    	]);
+
+
     	$tipoDocumento = new TipoDocumento;
 		/*
         $tipoDocumento = new TipoDocumento;
