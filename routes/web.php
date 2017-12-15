@@ -77,15 +77,20 @@ Route::get('/documentation', function()
 	return view('documentation');
 });
 
-Route::get('/documentos', function()
-{
-	return view('documentos');
-});
 
-Route::get('/documentosAlta', function()
-{
-	return view('documentosAlta');
-});
+/***************************************************/
+
+Route::get('/tasks/', 'TasksController@index');
+
+Route::get('/tasks/{task_id}', 'TasksController@show');
+
+/***************************************************/
+
+Route::get('/documentos', 'TipoDocumentosController@index');
+
+Route::get('/documentos/alta', 'TipoDocumentosController@alta');
+
+Route::post('/documentos/', 'TipoDocumentosController@store');
 
 Route::get('/documentosBaja', function()
 {
@@ -97,6 +102,8 @@ Route::get('/documentosModificacion', function()
 	return view('documentosModificacion');
 });
 
-Route::get('/tasks/', 'TasksController@index');
+Route::get('/documentos/{tipoDocumento}', 'TipoDocumentosController@show');
 
-Route::get('/tasks/{task_id}', 'TasksController@show');
+/***************************************************/
+
+Route::get('/blog', 'PostsController@index');
