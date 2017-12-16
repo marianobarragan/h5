@@ -327,7 +327,13 @@
                             <a href="{{ url ('documentation') }}"><i class="fa fa-file-word-o fa-fw"></i> Documentation</a>
                         </li>
                         <li {{ (Request::is('*documentos') ? 'class="active"' : '') }}>
-                            <a href="{{ url ('documentos') }}"><i class="fa fa-book fa-fw"></i> ABM Documentación</a>
+                            <a href="{{ url ('documentos') }}"><i class="fa fa-book fa-fw"></i> ABM Documento persona</a>
+                        </li>
+                        <li {{ (Request::is('*obraSocial') ? 'class="active"' : '') }}>
+                            <a href="{{ url ('obraSocial') }}"><i class="fa fa-credit-card fa-fw"></i> ABM Obra Social</a>
+                        </li>
+                        <li {{ (Request::is('*paciente') ? 'class="active"' : '') }}>
+                            <a href="{{ url ('paciente') }}"><i class="fa fa-user fa-fw"></i> Nuevo paciente</a>
                         </li>
                     </ul>
                 </div>

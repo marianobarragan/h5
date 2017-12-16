@@ -102,6 +102,25 @@ Route::get('/documentosModificacion', function()
 	return view('documentosModificacion');
 });
 
+Route::get('/obraSocial', function()
+{
+	return view('obraSocial');
+});
+
+Route::get('/obraSocialAlta', function()
+{
+	return view('obraSocialAlta');
+});
+
+Route::get('/paciente', function()
+{
+	return view('paciente');
+});
+
+Route::get('/pacienteAlta', function()
+{
+	return view('pacienteAlta');
+
 Route::get('/documentos/{tipoDocumento}', 'TipoDocumentosController@show');
 
 /***************************************************/
@@ -111,4 +130,5 @@ Route::get('/blog', 'PostsController@index');
 Route::get('/date', function()
 {
 	return view('laracasts.datepicker');
+
 });
