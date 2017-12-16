@@ -335,6 +335,10 @@
                         <li {{ (Request::is('*paciente') ? 'class="active"' : '') }}>
                             <a href="{{ url ('paciente') }}"><i class="fa fa-user fa-fw"></i> Nuevo paciente</a>
                         </li>
+                        <li {{ (Request::is('*sexo') ? 'class="active"' : '') }}>
+                            <a href="{{ url ('sexo') }}"><i class="fa fa-users fa-fw"></i> ABM Sexo</a>
+                        </li>
+
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->

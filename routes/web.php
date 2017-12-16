@@ -120,6 +120,17 @@ Route::get('/paciente', function()
 Route::get('/pacienteAlta', function()
 {
 	return view('pacienteAlta');
+});
+
+Route::get('/sexo', function()
+{
+	return view('sexo');
+});
+
+Route::get('/sexoAlta', function()
+{
+	return view('sexoAlta');
+});
 
 Route::get('/documentos/{tipoDocumento}', 'TipoDocumentosController@show');
 
