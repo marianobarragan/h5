@@ -96,3 +96,23 @@ Route::get('/documentosModificacion', function()
 {
 	return view('documentosModificacion');
 });
+
+Route::get('/obraSocial', function()
+{
+	return view('obraSocial');
+});
+
+Route::get('/obraSocialAlta', function()
+{
+	return view('obraSocialAlta');
+});
+
+Route::get('/paciente', function()
+{
+	return view('paciente');
+});
+
+Route::get('/pacienteAlta', function()
+{
+	return view('pacienteAlta');
+});
