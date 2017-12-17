@@ -4,11 +4,7 @@
 
             <!-- /.row -->
 
-            @if($flash = session('message'))
-                <div class="alert alert-success" role = "alert">
-                    {{ $flash }}
-                </div>
-            @endif
+            @include('layouts.flash')
             <div class="col-sm-12">
             <div class="row">
                 <div class="col-lg-3 col-md-6">

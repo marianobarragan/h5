@@ -16,6 +16,10 @@ Route::get('/', function()
 	return view('home');
 })->name('home');
 
+Route::get('/home', function () {
+    return redirect('/');
+});
+
 Route::get('/charts', function()
 {
 	return view('mcharts');
@@ -97,6 +101,10 @@ Route::get('/password', function()
 {
 	return view('auth.password');
 });
+
+/***************************************************/
+
+Route::get('/perfil', 'UserController@show');
 
 /***************************************************/
 
