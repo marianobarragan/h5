@@ -8,6 +8,11 @@ use App\User;
 
 class RegistrarController extends Controller
 {
+
+	 public function __construct(){
+    	$this->middleware('guest');
+    }
+    
     public function create(){
     	return view ('auth.register');
     }
