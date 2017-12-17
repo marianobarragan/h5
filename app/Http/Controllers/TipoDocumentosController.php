@@ -7,6 +7,11 @@ use App\TipoDocumento;
 
 class TipoDocumentosController extends Controller
 {
+
+    public  function __construct(){
+        $this->middleware('auth');
+    }
+
     public function index(){
     	
     	//$documentos = TipoDocumento::orderBy('creado', 'DESC')->get();	//MANERA ALTERNATIVA

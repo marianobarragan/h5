@@ -14,7 +14,7 @@
 Route::get('/', function()
 {
 	return view('home');
-});
+})->name('home');
 
 Route::get('/charts', function()
 {
@@ -67,10 +67,7 @@ Route::get('/blank', function()
 	return view('blank');
 });
 
-Route::get('/login', function()
-{
-	return view('login');
-});
+
 
 Route::get('/documentation', function()
 {
@@ -83,6 +80,23 @@ Route::get('/documentation', function()
 Route::get('/tasks/', 'TasksController@index');
 
 Route::get('/tasks/{task_id}', 'TasksController@show');
+
+/***************************************************/
+
+Route::get('/registrar', 'RegistrarController@create');
+
+Route::post('/registrar', 'RegistrarController@store');
+
+Route::get('/login', 'SesionController@create')->name('login');
+
+Route::post('/login', 'SesionController@store');
+
+Route::get('/logout', 'SesionController@destroy');
+
+Route::get('/password', function()
+{
+	return view('auth.password');
+});
 
 /***************************************************/
 

@@ -3,6 +3,12 @@
 @section('section')
 
             <!-- /.row -->
+
+            @if($flash = session('message'))
+                <div class="alert alert-success" role = "alert">
+                    {{ $flash }}
+                </div>
+            @endif
             <div class="col-sm-12">
             <div class="row">
                 <div class="col-lg-3 col-md-6">
@@ -14,7 +20,7 @@
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge">26</div>
-                                    <div>New Comments!</div>
+                                    <div>New Comments! </div>
                                 </div>
                             </div>
                         </div>

@@ -2,12 +2,13 @@
 
 	<div class="form-group">
 
-		<div class="alert alert-error">
-			<strong>Error!</strong> Se detectaron los siguientes problemas:<br><br>
+		<div class="alert alert-danger" role = "alert">
+			<strong>Error!</strong><br><br>
 			<ul>
 				@foreach ($errors->all() as $error)
 					<li>{{$error}}</li>
 				@endforeach
+			</ul>
 		</div>
 
 	</div>
