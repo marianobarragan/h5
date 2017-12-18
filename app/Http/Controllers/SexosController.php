@@ -24,7 +24,7 @@ class SexosController extends Controller
     {
 
         $sexo = request()->validate([
-            'descripcion_sexo' => 'required'
+            'descripcion_sexo' => 'required|unique:sexos'
         ]);
 
         Sexo::create($sexo);

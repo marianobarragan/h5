@@ -4,16 +4,16 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Sexo extends Model
+class Domicilio extends Model
 {
-    protected $primaryKey = 'id_sexo';
+    
+    protected $primaryKey = 'id_domicilio';
     const CREATED_AT = 'creado';
     const UPDATED_AT = 'ultima_modificacion';
 
-    protected $fillable = ['descripcion_sexo'];
+    protected $fillable = ['calle','altura','distrito','barrio'];
 
-    public function pacientes()
-    {
+    public function paciente(){
         return $this->hasMany('App\Paciente');
     }
 }

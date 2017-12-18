@@ -13,8 +13,8 @@ class Pais extends Model
 
     //protected $guarded = ['id'];
 
-    public function users()
+    public function pacientes()
     {
-        return $this->hasMany('App\User');
+        return $this->hasMany('App\Paciente');
     }    
 }

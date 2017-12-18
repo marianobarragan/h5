@@ -37,7 +37,11 @@ class Paciente extends Model
         return $this->belongsTo('App\TipoDocumento','id_documentos');
     }
 
+    public function domicilio(){
+        return $this->belongsTo('App\TipoDocumento','id_domicilio');
+    }
+
     public function user(){
-        return $this->belongsTo('App\User');
+        return $this->hasOne('App\User');
     }
 }

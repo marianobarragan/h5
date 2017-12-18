@@ -12,4 +12,9 @@ class TipoDocumento extends Model
     const UPDATED_AT = 'ultima_modificacion';
 
     protected $fillable = ['tipo_documento'];
+
+    public function pacientes()
+    {
+        return $this->hasMany('App\Paciente');
+    }    
 }

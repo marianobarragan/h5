@@ -22,7 +22,7 @@ class ObraSocialController extends Controller
 
     public function store(){
     	$obraSocial = request()->validate([
-            'obra_social' => 'required'
+            'obra_social' => 'required|unique:obra_social'
         ]);
 
         ObraSocial::create($obraSocial);

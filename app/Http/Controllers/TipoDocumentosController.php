@@ -52,7 +52,7 @@ class TipoDocumentosController extends Controller
         */
 
         $tipoDocumento = request()->validate([
-            'tipo_documento' => 'required'
+            'tipo_documento' => 'required|unique:documentos'
         ]);
 
         TipoDocumento::create($tipoDocumento);

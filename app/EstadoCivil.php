@@ -13,7 +13,7 @@ class EstadoCivil extends Model
 
     protected $fillable = ['estado_civil'];
 
-    public function sexo(){
-        return $this->hasMany('App\Sexo','id_sexo');
+    public function paciente(){
+        return $this->hasMany('App\Paciente');
     }
 }

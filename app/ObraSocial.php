@@ -13,8 +13,8 @@ class ObraSocial extends Model
 
     protected $fillable = ['obra_social'];
 
-	public function users()
+	public function pacientes()
 	{
-		return $this->hasMany('App\User');
+		return $this->hasMany('App\Paciente');
 	}
 }
