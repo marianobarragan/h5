@@ -13,7 +13,7 @@ class SexosController extends Controller
     }
 
     public function index(){
-    	return view('domain.sexos.index'));
+    	return view('domain.sexos.sexo');
     }
 
 	public function alta(){
