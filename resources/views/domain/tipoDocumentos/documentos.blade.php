@@ -1,7 +1,11 @@
 @extends('layouts.dashboard')
 @section('page_heading','ABM Documentos')
 @section('section')
+
+@include('layouts.flash')
+
 <div class="col-lg-4 col-lg-offset-4">
+
 	<div style="padding-bottom:25px">
 		<a href="{{ url ('documentos/alta') }}">
 		@include('widgets.button', array('class'=>'success', 'value'=>'Alta', 'size'=>'lg btn-block'))

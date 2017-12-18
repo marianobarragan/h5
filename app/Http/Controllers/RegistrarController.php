@@ -36,6 +36,6 @@ class RegistrarController extends Controller
 
 		//session()->flash('message','Usuario registrado correctamente!');
         
-        return redirect('/')->with('message', 'Usuario registrado correctamente!');;
+        return redirect('/')->with('message', 'Usuario registrado correctamente!');
     }
 }

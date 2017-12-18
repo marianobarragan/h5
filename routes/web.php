@@ -16,9 +16,7 @@ Route::get('/', function()
 	return view('home');
 })->name('home');
 
-Route::get('/home', function () {
-    return redirect('/');
-});
+Route::redirect('/home', '/');
 
 Route::get('/charts', function()
 {
@@ -66,10 +64,8 @@ Route::get('/notifications', function()
 	return view('notifications');
 });
 
-Route::get('/blank', function()
-{
-	return view('blank');
-});
+Route::view('/blank', 'blank');
+
 
 
 
@@ -110,9 +106,9 @@ Route::get('/perfil', 'UserController@show');
 
 Route::get('/documentos', 'TipoDocumentosController@index');
 
-Route::get('/documentos/alta', 'TipoDocumentosController@alta');
-
 Route::post('/documentos/', 'TipoDocumentosController@store');
+
+Route::get('/documentos/alta', 'TipoDocumentosController@alta');
 
 Route::get('/documentosBaja', function()
 {
@@ -124,35 +120,29 @@ Route::get('/documentosModificacion', function()
 	return view('documentosModificacion');
 });
 
-Route::get('/obraSocial', function()
-{
-	return view('obraSocial');
-});
+/***************************************************/
 
-Route::get('/obraSocialAlta', function()
-{
-	return view('obraSocialAlta');
-});
+Route::get('/pacientes', 'PacientesController@index');
 
-Route::get('/paciente', function()
-{
-	return view('paciente');
-});
+Route::post('/pacientes', 'PacientesController@store');
 
-Route::get('/pacienteAlta', function()
-{
-	return view('pacienteAlta');
-});
+Route::get('/pacientes/alta', 'PacientesController@create');
 
-Route::get('/sexo', function()
-{
-	return view('sexo');
-});
+/***************************************************/
 
-Route::get('/sexoAlta', function()
-{
-	return view('sexoAlta');
-});
+Route::get('/obrasocial', 'ObraSocialController@index');
+
+Route::post('/obrasocial', 'ObraSocialController@store');
+
+Route::get('/obrasocial/alta', 'ObraSocialController@create');
+
+/***************************************************/
+
+Route::get('/sexo', 'SexosController@index');
+
+Route::post('/sexo', 'SexosController@index');
+
+Route::get('/sexo/alta', 'SexosController@index');
 
 Route::get('/documentos/{tipoDocumento}', 'TipoDocumentosController@show');
 

@@ -18,12 +18,12 @@ class TipoDocumentosController extends Controller
 
     	$documentos = TipoDocumento::oldest(TipoDocumento::CREATED_AT)->get();
     	
-    	return view('tipoDocumentos.documentos',compact( 'documentos'));
+    	return view('domain.tipoDocumentos.documentos',compact( 'documentos'));
     	
     }
 
 	public function alta(){
-    	return view('tipoDocumentos.documentosAlta');
+    	return view('domain.tipoDocumentos.documentosAlta');
     }
 
     public function show(TipoDocumento $tipoDocumento){
@@ -34,23 +34,30 @@ class TipoDocumentosController extends Controller
 
     public function store(Request $request)
     {
+        /*
+
         // Validate the request...
     	$this->validate(request(),[
     		'tipo_documento' => 'required'
     	]);
-
-
+        
     	$tipoDocumento = new TipoDocumento;
-		/*
         $tipoDocumento = new TipoDocumento;
         $tipoDocumento->name = $request->name;
         $tipoDocumento->name = $request('name'));
         
-        */
+        
         TipoDocumento::create(request(['tipo_documento']));
         //$tipoDocumento->save();
+        */
 
-        return redirect('documentos');
+        $tipoDocumento = request()->validate([
+            'tipo_documento' => 'required'
+        ]);
+
+        TipoDocumento::create($tipoDocumento);
+
+        return redirect('/documentos')->with('message', 'Tipo de Documento creado correctamente!');
     }
 
 }

@@ -3,8 +3,13 @@
 @section('page_heading','Nuevo paciente')
 @section('section')
 <div class="row">
-<form role="form" class="form-horizontal">
-  	<div class="col-lg-6">
+
+    @include('layouts.errors')
+    <form role="form" method="POST" action="/pacientes" class="form-horizontal" >
+        {{ csrf_field() }}
+  	<div class="col-lg-6 col-md-offset-2">
+        <h3>Descripción de la página </h3>
+        <hr>
         <div class="form-group" style="padding-bottom: 8px">
 			<label class="col-sm-4 control-label">Nombre paciente</label>
 			<div class="col-sm-8">
@@ -25,23 +30,32 @@
             </div>
         </div>
 
-        <div class="form-group" style="padding-bottom: 40px">
+        <div class="form-group" style="padding-bottom: 8px">
 			<label class="col-sm-4 control-label"> Sexo</label>
 			<div class="col-sm-8">
             	<select class="form-control">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
+                    @foreach($sexos as $sexo)
+                        <option>{{$sexo->descripcion_sexo}}</option>
+                    @endforeach
                 </select>
             </div>
-        </div>    
+        </div>
 
-        <div class="form-group" style="padding-bottom: 40px">
-			<label class="col-sm-4 control-label"> Nro. historia clínica</label>
+        <div class="form-group" style="padding-bottom: 8px">
+            <label class="col-sm-4 control-label"> Estado Civil</label>
+            <div class="col-sm-8">
+                <select class="form-control" name="estado_civil">
+                    @foreach($estados as $estado)
+                        <option value="{{$estado->id_estado_civil}}">{{$estado->estado_civil}}</option>
+                    @endforeach
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group" style="padding-bottom: 8px">
+			<label class="col-sm-4 control-label"> Nro. Historia Clínica</label>
 			<div class="col-sm-8">
-            	<input class="form-control" placeholder="Ingrese el documento" name="nroHistoriaClinica">
+            	<input class="form-control" placeholder="Ingrese el nro. historia clínica" name="nroHistoriaClinica">
             </div>
         </div>
         <!--Datos Domicilio-->
@@ -86,17 +100,14 @@
                 <input class="form-control" placeholder="Ingrese la hora de nacimiento con formato HH:SS" name="horaNacimiento">
             </div>
         </div>
-    </div>
-    <div class="col-lg-6">
+    
     	<div class="form-group" style="padding-bottom: 8px">
 			<label class="col-sm-4 control-label"> Nacionalidad</label>
 			<div class="col-sm-8">
             	<select class="form-control">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
+                    @foreach($paises as $pais)
+                        <option>{{$pais->nombre}}</option>
+                    @endforeach
                 </select>
             </div>
         </div>
@@ -140,11 +151,10 @@
             <label class="col-sm-4 control-label"> Tipo Obra Social</label>
             <div class="col-sm-8">
                 <select class="form-control">
-                    <option>a</option>
-                    <option>b</option>
-                    <option>c</option>
-                    <option>d</option>
-                    <option>e</option>
+                    @foreach($obras as $obra)
+                        <option>{{$obra->obra_social}}</option>
+                    @endforeach
+                    
                 </select>
             </div>
         </div>
@@ -166,13 +176,14 @@
                 <textarea class="form-control" rows="2"></textarea>
             </div>
         </div>
-    </div>	
-</form>
+        <div class="col-lg-12 col-md-6" style="padding-bottom: 40px">
+            <button type="submit" class="btn btn-primary" style="float: right;">Crear paciente</button>
+            <button type="reset" class="btn btn-default">Resetear Formulario</button>
+        </div>    
+    </form>
 </div>
-<div class="row">
-    <div class="col-lg-12 col-md-6" style="padding-bottom: 40px">
-        <button type="submit" class="btn btn-default btn-lg" style="float: right;">Crear paciente</button>
-        <button type="reset" class="btn btn-default">Resetear Formulario</button>
-    </div>
-</div>
+
+
+
+
 @stop

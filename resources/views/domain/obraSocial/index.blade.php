@@ -2,9 +2,11 @@
 @section('page_heading','ABM Obra Social')
 @section('section')
 
+@include('layouts.flash')
+
 <div class="col-lg-4 col-lg-offset-4">
 	<div style="padding-bottom:25px">
-		<a href="{{ url ('obraSocialAlta') }}">
+		<a href="{{ url ('obrasocial/alta') }}">
 		@include('widgets.button', array('class'=>'success', 'value'=>'Crear una nueva Obra Social', 'size'=>'lg btn-block'))
 		</a>
 	</div>
