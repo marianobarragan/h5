@@ -192,3 +192,13 @@ Route::get('api/paises', function()
 	return datatables()->of(\App\Pais::all())->toJson();
 
 });
+
+Route::get('/oficina', function()
+{
+	return view('oficina');
+});
+
+Route::get('/oficinaAlta', function()
+{
+	return view('oficinaAlta');
+});
