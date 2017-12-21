@@ -83,7 +83,7 @@ CREATE TABLE `documentos` (
   PRIMARY KEY (`id_documento`),
   UNIQUE KEY `id_documento_UNIQUE` (`id_documento`),
   UNIQUE KEY `tipo_documento_UNIQUE` (`tipo_documento`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -163,6 +163,8 @@ DROP TABLE IF EXISTS `especialidades`;
 CREATE TABLE `especialidades` (
   `id_especialidad` int(11) NOT NULL AUTO_INCREMENT,
   `descripcion_especialidad` varchar(45) CHARACTER SET latin1 NOT NULL,
+  `creado` datetime NOT NULL,
+  `ultima_modificacion` datetime NOT NULL,
   PRIMARY KEY (`id_especialidad`),
   UNIQUE KEY `descripcion` (`descripcion_especialidad`),
   UNIQUE KEY `id_especialidad_UNIQUE` (`id_especialidad`)
@@ -175,7 +177,7 @@ CREATE TABLE `especialidades` (
 
 LOCK TABLES `especialidades` WRITE;
 /*!40000 ALTER TABLE `especialidades` DISABLE KEYS */;
-INSERT INTO `especialidades` VALUES (1,'ESP_1'),(2,'ESP_2');
+INSERT INTO `especialidades` VALUES (1,'ESP_1','0000-00-00 00:00:00','0000-00-00 00:00:00'),(2,'ESP_2','0000-00-00 00:00:00','0000-00-00 00:00:00');
 /*!40000 ALTER TABLE `especialidades` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -223,6 +225,8 @@ CREATE TABLE `especialistas` (
   `nombre` varchar(45) DEFAULT NULL,
   `apellido` varchar(45) DEFAULT NULL,
   `telefono` varchar(45) DEFAULT NULL,
+  `creado` datetime NOT NULL,
+  `ultima_modificacion` datetime NOT NULL,
   PRIMARY KEY (`id_especialista`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -233,7 +237,7 @@ CREATE TABLE `especialistas` (
 
 LOCK TABLES `especialistas` WRITE;
 /*!40000 ALTER TABLE `especialistas` DISABLE KEYS */;
-INSERT INTO `especialistas` VALUES (1,'especialista 1',NULL,NULL),(2,'especialista 2',NULL,NULL);
+INSERT INTO `especialistas` VALUES (1,'especialista 1','apellido',NULL,'0000-00-00 00:00:00','0000-00-00 00:00:00'),(2,'especialista 2','apellido',NULL,'0000-00-00 00:00:00','0000-00-00 00:00:00');
 /*!40000 ALTER TABLE `especialistas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -301,10 +305,12 @@ CREATE TABLE `horarios_atencion` (
   `id_especialista` int(11) NOT NULL,
   `id_oficina` int(11) NOT NULL,
   `horario_inicio` time NOT NULL,
-  `horario_fin` time NOT NULL,
+  `horario_finalizacion` time NOT NULL,
   `id_dia` int(11) NOT NULL,
   `duracion_turnos` time NOT NULL,
   `id_especialidad` int(11) NOT NULL,
+  `creado` datetime NOT NULL,
+  `ultima_modificacion` datetime NOT NULL,
   PRIMARY KEY (`id_horario_atencion`),
   UNIQUE KEY `id_horario_atencion_UNIQUE` (`id_horario_atencion`),
   KEY `fk_especialista_en_ha_idx` (`id_especialista`),
@@ -315,7 +321,7 @@ CREATE TABLE `horarios_atencion` (
   CONSTRAINT `fk_especialista_ha` FOREIGN KEY (`id_especialista`) REFERENCES `especialistas` (`id_especialista`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `ha_dia` FOREIGN KEY (`id_dia`) REFERENCES `dias_semana` (`id_dia_semana`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `ha_oficina` FOREIGN KEY (`id_oficina`) REFERENCES `oficinas` (`id_oficina`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -324,7 +330,7 @@ CREATE TABLE `horarios_atencion` (
 
 LOCK TABLES `horarios_atencion` WRITE;
 /*!40000 ALTER TABLE `horarios_atencion` DISABLE KEYS */;
-INSERT INTO `horarios_atencion` VALUES (9,1,1,'13:00:00','14:30:00',2,'00:20:00',1),(10,2,1,'13:00:00','14:30:00',2,'00:20:00',1);
+INSERT INTO `horarios_atencion` VALUES (9,1,1,'13:00:00','14:30:00',2,'00:20:00',1,'0000-00-00 00:00:00','0000-00-00 00:00:00'),(10,2,1,'13:00:00','14:30:00',2,'00:20:00',1,'0000-00-00 00:00:00','0000-00-00 00:00:00'),(11,2,2,'10:00:00','14:40:00',2,'00:30:00',2,'2017-12-21 02:45:22','2017-12-21 02:45:22');
 /*!40000 ALTER TABLE `horarios_atencion` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -416,6 +422,8 @@ CREATE TABLE `oficinas` (
   `id_oficina` int(11) NOT NULL AUTO_INCREMENT,
   `id_domicilio` int(11) NOT NULL,
   `descripcion` varchar(45) NOT NULL,
+  `creado` datetime NOT NULL,
+  `ultima_modificacion` datetime NOT NULL,
   PRIMARY KEY (`id_oficina`),
   UNIQUE KEY `id_oficina_UNIQUE` (`id_oficina`),
   KEY `oficina_domicilio_idx` (`id_domicilio`),
@@ -429,7 +437,7 @@ CREATE TABLE `oficinas` (
 
 LOCK TABLES `oficinas` WRITE;
 /*!40000 ALTER TABLE `oficinas` DISABLE KEYS */;
-INSERT INTO `oficinas` VALUES (1,1,'OFI_1'),(2,2,'OFI_2');
+INSERT INTO `oficinas` VALUES (1,1,'OFI_1','0000-00-00 00:00:00','0000-00-00 00:00:00'),(2,2,'OFI_2','0000-00-00 00:00:00','0000-00-00 00:00:00');
 /*!40000 ALTER TABLE `oficinas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -695,7 +703,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'John Doe','john@example.com','$2y$10$9tGsxvP3IVACyA5v/jbNGeQtBKqyEMwFfJoKHUmJHv1R9tuYw.qt2',NULL,'2017-12-17 06:29:37','2017-12-17 06:29:37',1),(12,'Mario Martinez','mario1@gmail.com','$2y$10$gFuR2g.wyiVdqLay15zxkee7AAvM1SWAF5fv5yMpDtuj.EzehOzky','6toyQic69sl3HWINzsidfbCbBCYpCuZNhnqViFTZdVGSY1aVMuH8bzRpvvEi','2017-12-17 11:13:37','2017-12-17 11:13:37',1),(13,'Mario Kart','mario4@gmail.com','$2y$10$MMEzilXCw6HpnaMOGL5gBuhqdTm17Wj7awKQdl97ARagtcKAowoSu','qngVWnN2RDBvggq3EC1x2yBnW17jYocdAiIBraFUCelVHzII9IYjaBRBof1X','2017-12-17 21:20:47','2017-12-17 21:20:47',1),(14,'Mario Martinez','mario5@gmail.com','$2y$10$ALhubA1zykZ6sLfhY.R.ke/cHDWBvVBN5GFwhknkCD.DECSl.FcXi',NULL,'2017-12-17 21:42:57','2017-12-17 21:42:57',1);
+INSERT INTO `users` VALUES (1,'John Doe','john@example.com','$2y$10$9tGsxvP3IVACyA5v/jbNGeQtBKqyEMwFfJoKHUmJHv1R9tuYw.qt2',NULL,'2017-12-17 06:29:37','2017-12-17 06:29:37',1),(12,'Mario Martinez','mario1@gmail.com','$2y$10$gFuR2g.wyiVdqLay15zxkee7AAvM1SWAF5fv5yMpDtuj.EzehOzky','MFMuuM1JnFLCD1MgCeb0J1646I0VbpfdJD6P0LAxaq3jdQQEOimJvBrfIVzV','2017-12-17 11:13:37','2017-12-17 11:13:37',1),(13,'Mario Kart','mario4@gmail.com','$2y$10$MMEzilXCw6HpnaMOGL5gBuhqdTm17Wj7awKQdl97ARagtcKAowoSu','qngVWnN2RDBvggq3EC1x2yBnW17jYocdAiIBraFUCelVHzII9IYjaBRBof1X','2017-12-17 21:20:47','2017-12-17 21:20:47',1),(14,'Mario Martinez','mario5@gmail.com','$2y$10$ALhubA1zykZ6sLfhY.R.ke/cHDWBvVBN5GFwhknkCD.DECSl.FcXi',NULL,'2017-12-17 21:42:57','2017-12-17 21:42:57',1);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -732,4 +740,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-12-19  0:18:06
+-- Dump completed on 2017-12-21  0:30:00
