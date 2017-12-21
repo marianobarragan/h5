@@ -11,6 +11,6 @@ class Especialidad extends Model
     const CREATED_AT = 'creado';
     const UPDATED_AT = 'ultima_modificacion';
 
-    protected $fillable = ['tipo_documento'];
+    protected $fillable = ['descripcion_especialidad'];
 
 }

@@ -58,6 +58,12 @@
                         <li {{ (Request::is('*sexo') ? 'class="active"' : '') }}>
                             <a href="{{ url ('sexo') }}"><i class="fa fa-users fa-fw"></i> ABM Sexo</a>
                         </li>
+                        <li {{ (Request::is('*horarios') ? 'class="active"' : '') }}>
+                            <a href="{{ url ('horarios') }}"><i class="fa fa-clock-o fa-fw"></i> ABM Horario Atencion</a>
+                        </li>
+                        <li {{ (Request::is('*especialidades') ? 'class="active"' : '') }}>
+                            <a href="{{ url ('especialidades') }}"><i class="fa fa-heart fa-fw"></i> ABM Especialidades</a>
+                        </li>                        
 
                     </ul>
                 </div>
