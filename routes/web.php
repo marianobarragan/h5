@@ -164,6 +164,14 @@ Route::get('/especialidades/alta', 'EspecialidadesController@create');
 
 /***************************************************/
 
+Route::get('/turnos', 'TurnosController@index');
+
+Route::post('/turnos', 'TurnosController@store');
+
+Route::get('/turnos/alta', 'TurnosController@create');
+
+/***************************************************/
+
 Route::get('/blog', 'PostsController@index');
 
 Route::get('/date', function()

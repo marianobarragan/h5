@@ -63,7 +63,10 @@
                         </li>
                         <li {{ (Request::is('*especialidades') ? 'class="active"' : '') }}>
                             <a href="{{ url ('especialidades') }}"><i class="fa fa-heart fa-fw"></i> ABM Especialidades</a>
-                        </li>                        
+                        </li>
+                        <li {{ (Request::is('*turnos') ? 'class="active"' : '') }}>
+                            <a href="{{ url ('turnos') }}"><i class="fa fa-desktop fa-fw"></i> ABM Turnos</a>
+                        </li>
 
                     </ul>
                 </div>
