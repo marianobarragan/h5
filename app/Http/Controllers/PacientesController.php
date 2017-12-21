@@ -11,6 +11,7 @@ use App\Sexo;
 use App\ObraSocial;
 use App\Pais;
 use App\EstadoCivil;
+use App\Domicilio;
 
 class PacientesController extends Controller
 {
@@ -36,24 +37,30 @@ class PacientesController extends Controller
 
     public function store(AltaPacienteRequest $request){
         
-		//$paciente = new Paciente(request('nombre'));
+		$domicilio = Domicilio::create(request(['calle','altura','distrito','barrio']));
+		$paciente = new Paciente();
 		// $request->except(['key1']);
 
-        /*
-        $paciente->nombre = request('nombre');
+        
         $paciente->id_documento = request('id_documento');
+        $paciente->id_estado_civil = request('id_estado_civil');
         $paciente->numero_historia_clinica = request('numero_historia_clinica');
+		$paciente->hora_nacimiento = request('hora_nacimiento');
         $paciente->fecha_nacimiento = request('fecha_nacimiento');
         $paciente->id_pais = request('id_pais');
-        $paciente->hora_nacimiento = request('id_documento');
+        $paciente->esta_vivo = request('esta_vivo');
+        
         $paciente->id_documento = request('id_documento');
         $paciente->id_documento = request('id_documento');
         $paciente->id_documento = request('id_documento');
-        $paciente->id_documento = request('id_documento');
+		
+		
+		$paciente->nombre = request('nombre');
+		$paciente->apellido = request('apellido');
+    	
+    	$paciente->save();
+        //Paciente::create($paciente);
 
-    	return $paciente;
-        Paciente::create($paciente);
-*/
     	return redirect('/pacientes')->with('message', 'Paciente registrado correctamente!');
     }
 }

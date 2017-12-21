@@ -148,10 +148,39 @@ Route::get('/documentos/{tipoDocumento}', 'TipoDocumentosController@show');
 
 /***************************************************/
 
+Route::get('/horarios', 'HorariosDeAtencionController@index');
+
+Route::post('/horarios', 'HorariosDeAtencionController@store');
+
+Route::get('/horarios/alta', 'HorariosDeAtencionController@create');
+
+/***************************************************/
+
+Route::get('/especialidades', 'EspecialidadesController@index');
+
+Route::post('/especialidades', 'EspecialidadesController@store');
+
+Route::get('/especialidades/alta', 'EspecialidadesController@create');
+
+/***************************************************/
+
 Route::get('/blog', 'PostsController@index');
 
 Route::get('/date', function()
 {
 	return view('laracasts.datepicker');
+
+});
+
+Route::get('/paises', function()
+{
+	$paises = \App\Pais::all()->take(10);
+	return view('domain.paises',compact('paises'));
+
+});
+
+Route::get('api/paises', function()
+{
+	return datatables()->of(\App\Pais::all())->toJson();
 
 });

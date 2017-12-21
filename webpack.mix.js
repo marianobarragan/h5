@@ -19,6 +19,7 @@ mix.styles([
    'bower_components/bootstrap/dist/css/bootstrap.css',
    'bower_components/fontawesome/css/font-awesome.css',
    'bower_components/jquery-ui/cupertino/jquery-ui.css',
+   'bower_components/datatables.net-dt/css/jquery.dataTables.min.css',
    'resources/css/sb-admin-2.css',
    'resources/css/timeline.css'
 ], 'public/assets/stylesheets/styles.css')
@@ -30,9 +31,11 @@ mix.scripts([
    'bower_components/Chart.js/dist/Chart.js',
    'bower_components/metisMenu/dist/metisMenu.js',
    'bower_components/jquery-ui/jquery-ui.js',
+   'bower_components/datatables.net/js/jquery.dataTables.min.js',
    'resources/js/datepicker.js',
    'resources/js/sb-admin-2.js',
-   'resources/js/frontend.js'
+   'resources/js/frontend.js',
+   'resources/js/datatables.js'
 ], 'public/assets/scripts/frontend.js')
     .sourceMaps()
     .version();

@@ -16,5 +16,5 @@ class TipoDocumento extends Model
     public function pacientes()
     {
         return $this->hasMany('App\Paciente');
-    }    
+    }
 }

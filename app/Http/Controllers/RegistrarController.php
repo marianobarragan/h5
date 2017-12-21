@@ -9,7 +9,7 @@ use App\User;
 class RegistrarController extends Controller
 {
 
-	 public function __construct(){
+	public function __construct(){
     	$this->middleware('guest');
     }
     
