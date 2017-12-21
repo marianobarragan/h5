@@ -166,9 +166,9 @@ Route::get('/especialidades/alta', 'EspecialidadesController@create');
 
 Route::get('/turnos', 'TurnosController@index');
 
-Route::post('/turnos', 'TurnosController@store');
+Route::post('/turnos/consultar', 'TurnosController@buscarTurnosLibres');
 
-Route::get('/turnos/alta', 'TurnosController@create');
+Route::get('/turnos/consultar', 'TurnosController@consultar');
 
 /***************************************************/
 
@@ -188,6 +188,12 @@ Route::get('/paises', function()
 });
 
 Route::get('api/paises', function()
+{
+	return datatables()->of(\App\Pais::all())->toJson();
+
+});
+
+Route::get('turnos/api/paises', function()
 {
 	return datatables()->of(\App\Pais::all())->toJson();
 

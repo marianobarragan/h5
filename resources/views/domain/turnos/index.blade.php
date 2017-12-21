@@ -9,7 +9,7 @@
 </div>
 <div class="col-lg-4 col-lg-offset-4">
 	<div style="padding-bottom:25px">
-		<a href="{{ url ('turnos/alta') }}">
+		<a href="{{ url ('turnos/consultar') }}">
 			@include('widgets.button', array('class'=>'success', 'value'=>'Pedir un nuevo turno', 'size'=>'lg btn-block'))
 		</a>
 	</div>           

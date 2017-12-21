@@ -1,5 +1,5 @@
 @extends('layouts.dashboard')
-@section('page_heading','ABM Documentos')
+@section('page_heading','Paises')
 @section('section')
 
 @include('layouts.flash')

@@ -4,11 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Oficina extends Model
+class Consultorio extends Model
 {
-    protected $primaryKey = 'id_oficina';
+    protected $primaryKey = 'id_consultorio';
     const CREATED_AT = 'creado';
     const UPDATED_AT = 'ultima_modificacion';
 
-    protected $fillable = ['descripcion','id_domicilio'];
+    protected $fillable = ['id_oficina','descripcion_consultorio'];
 }

@@ -10,3 +10,18 @@ $(document).ready(function(){
         ]
 	});
 });
+
+$(document).ready(function(){
+        $('#turnos').DataTable({
+                "processing": true,
+        "serverSide": true,
+        "ajax": "api/paises",
+        "columns": [
+                {data:"id"},
+                {data:"nombre"},
+                {data:"codigo2"},
+                {data:"codigo3"},
+                {data:"codigoNumerico"},
+        ]
+        });
+});

@@ -15,7 +15,7 @@ class TurnosController extends Controller
     	return view('domain.turnos.index');
     }
 
-    public function create(){
+    public function consultar(){
 
     	$especialistas = \App\Especialista::all();
     	$especialidades = \App\Especialidad::all();
@@ -23,17 +23,23 @@ class TurnosController extends Controller
     	$dias = \App\Dia::all();
     	$paises = \App\Pais::all()->take(10);
 
-    	return view('domain.turnos.alta',compact(['especialistas','especialidades','oficinas','dias','paises']));
+    	return view('domain.turnos.buscarTurnosLibres',compact(['especialistas','especialidades','oficinas','dias','paises']));
     }
 
-    public function store(){
-    	$turno = request()->validate([
-            'id_especialidad' => 'required',
-            'id_especialista'
+    public function buscarTurnosLibres(){
+    	
+    	$this->validate(request(),[
+            'id_especialidad' => 'required|integer|exists:especialidades',
+            'id_especialista' => 'nullable|integer|exists:especialistas',
+            'id_oficina' => 'nullable|integer|exists:oficinas', 
+            'fecha_desde' => 'nullable|date|exists:oficinas',
+            'fecha_hasta' => 'nullable|date|exists:oficinas',
+            'horario_inicio' => 'required|date_format:H:i',
+            'horario_finalizacion' => 'required|date_format:H:i'
         ]);
 
-        Turno::create($turno);
+		//id_turno, 
 
-        return redirect('/turno')->with('message', 'Turno creado correctamente!');
+        return redirect('/turnos/');
     }
 }
