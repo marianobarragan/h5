@@ -202,3 +202,13 @@ Route::get('/oficinaAlta', function()
 {
 	return view('oficinaAlta');
 });
+
+Route::get('/especialista', function()
+{
+	return view('especialista');
+});
+
+Route::get('/especialistaAlta', function()
+{
+	return view('especialistaAlta');
+});

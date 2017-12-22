@@ -70,6 +70,9 @@
                         <li {{ (Request::is('*oficina') ? 'class="active"' : '') }}>
                             <a href="{{ url ('oficina') }}"><i class="fa fa-building-o fa-fw"></i> ABM Oficina</a>
                         </li>
+                        <li {{ (Request::is('*especialista') ? 'class="active"' : '') }}>
+                            <a href="{{ url ('especialista') }}"><i class="fa fa-user-md fa-fw"></i> ABM Especialista</a>
+                        </li>
 
 
                     </ul>
