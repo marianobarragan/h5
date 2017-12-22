@@ -7,7 +7,7 @@
 </div>
 <div class="col-lg-4 col-lg-offset-4">
 	<div style="padding-bottom:25px">
-		<a href="{{ url ('oficinaAlta') }}">
+		<a href="{{ url ('oficinas/alta') }}">
 			@include('widgets.button', array('class'=>'success', 'value'=>'Ingresar una nueva oficina', 'size'=>'lg btn-block'))
 		</a>
 	</div>           

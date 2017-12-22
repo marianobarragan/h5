@@ -172,6 +172,12 @@ Route::get('/turnos/alta', 'TurnosController@create');
 
 /***************************************************/
 
+Route::get('/oficinas', 'OficinasController@index');
+
+Route::get('/oficinas/alta', 'OficinasController@create');
+
+/***************************************************/
+
 Route::get('/blog', 'PostsController@index');
 
 Route::get('/date', function()
@@ -192,7 +198,7 @@ Route::get('api/paises', function()
 	return datatables()->of(\App\Pais::all())->toJson();
 
 });
-
+/*
 Route::get('/oficina', function()
 {
 	return view('oficina');
@@ -202,7 +208,7 @@ Route::get('/oficinaAlta', function()
 {
 	return view('oficinaAlta');
 });
-
+*/
 Route::get('/especialista', function()
 {
 	return view('especialista');

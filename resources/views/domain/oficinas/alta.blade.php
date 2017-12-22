@@ -18,7 +18,7 @@
 		@include('domain.domicilioCampos')
 		</div>
 		<div class="col-sm-6 " align= "left">
-			<a href="{{ url ('oficina') }}">
+			<a href="{{ url ('oficinas') }}">
 				@include('widgets.button', array('class'=>'default', 'value'=>'Volver'))
 			</a>
 		</div>
