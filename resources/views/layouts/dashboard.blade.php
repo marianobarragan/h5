@@ -67,6 +67,13 @@
                         <li {{ (Request::is('*turnos') ? 'class="active"' : '') }}>
                             <a href="{{ url ('turnos') }}"><i class="fa fa-desktop fa-fw"></i> ABM Turnos</a>
                         </li>
+                        <li {{ (Request::is('*oficinas') ? 'class="active"' : '') }}>
+                            <a href="{{ url ('oficinas') }}"><i class="fa fa-building-o fa-fw"></i> ABM Oficina</a>
+                        </li>
+                        <li {{ (Request::is('*especialista') ? 'class="active"' : '') }}>
+                            <a href="{{ url ('especialista') }}"><i class="fa fa-user-md fa-fw"></i> ABM Especialista</a>
+                        </li>
+
 
                     </ul>
                 </div>

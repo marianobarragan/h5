@@ -1,22 +1,24 @@
 @extends('layouts.dashboard')
-@section('page_heading','ABM Documentos Alta')
+@section('page_heading','Oficinas')
 @section('section')
 <div class="col-lg-6 col-md-offset-2">
-	@section ('panel2_panel_title', 'Alta Documentos')
+	@section ('panel2_panel_title', 'Alta Oficinas')
 	@section ('panel2_panel_body')
-
 	<form role="form" method="POST" action="/documentos">
 		{{ csrf_field() }}
-		<label style="padding-bottom:10px">Ingrese el documento:</label>
+		<label style="padding-bottom:10px">Ingrese una descripción de la oficina:</label>
 		
-		<div class ="form-group" style="padding-bottom:60px">
+		<div class ="form-group" style="padding-bottom:40px">
 			<div class="form-group col-lg-12">   
-	            <input class="form-control" placeholder="Ingrese el documento" name="tipo_documento" id="tipo_documento" >
+	            <input class="form-control" placeholder="Ingrese la descripción" name="descripcion_oficina" id="descripcion_oficina">
 	        </div>
 		</div>
-		
+		<label style="padding-bottom:10px">Ingrese los datos del domicilio:</label>
+		<div style="padding-bottom:20px">
+		@include('domain.domicilioCampos')
+		</div>
 		<div class="col-sm-6 " align= "left">
-			<a href="{{ url ('oficina') }}">
+			<a href="{{ url ('oficinas') }}">
 				@include('widgets.button', array('class'=>'default', 'value'=>'Volver'))
 			</a>
 		</div>
