@@ -5,28 +5,28 @@
 <div class="col-lg-6 col-md-offset-2">
 	@section ('panel2_panel_title', 'Alta Especialistas')
 	@section ('panel2_panel_body')
-	<form role="form" method="POST" action="/documentos">
+	<form role="form" method="POST" action="/especialistas">
 		{{ csrf_field() }}
 		<label style="padding-bottom:10px">Ingrese el nombre del especialista:</label>
 		<div class ="form-group" style="padding-bottom:40px">
 			<div class="form-group col-lg-12">   
-	            <input class="form-control" placeholder="Ingrese el nombre" name="nombre_especialista" id="nombre_especialista">
+	            <input class="form-control" placeholder="Ingrese el nombre" name="nombre" id="nombre">
 	        </div>
 		</div>
 		<label style="padding-bottom:10px">Ingrese el apellido del especialista:</label>
 		<div class ="form-group" style="padding-bottom:40px">
 			<div class="form-group col-lg-12">   
-	            <input class="form-control" placeholder="Ingrese la descripción" name="apellido_especialista" id="apellido_especialista">
+	            <input class="form-control" placeholder="Ingrese el apellido" name="apellido" id="apellido">
 	        </div>
 		</div>
 		<label style="padding-bottom:10px">Ingrese el telefono del especialista:</label>
 		<div class ="form-group" style="padding-bottom:40px">
 			<div class="form-group col-lg-12">   
-	            <input class="form-control" placeholder="Ingrese la descripción" name="telefono_especialista" id="telefono_especialista">
+	            <input class="form-control" placeholder="Sin guiones" name="telefono" id="telefono">
 	        </div>
 		</div>
 		<div class="col-sm-6 " align= "left">
-			<a href="{{ url ('oficina') }}" >
+			<a href="{{ url ('especialistas') }}" >
 				@include('widgets.button', array('class'=>'default', 'value'=>'Volver'))
 			</a>
 		</div>

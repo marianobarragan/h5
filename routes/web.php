@@ -178,6 +178,21 @@ Route::get('/oficinas/alta', 'OficinasController@create');
 
 /***************************************************/
 
+Route::get('/especialistas', 'EspecialistasController@index');
+
+Route::post('/especialistas', 'EspecialistasController@store');
+
+Route::get('/especialistas/alta', 'EspecialistasController@create');
+
+/***************************************************/
+
+Route::get('/consultorios', 'ConsultoriosController@index');
+
+Route::post('/consultorios', 'ConsultoriosController@store');
+
+Route::get('/consultorios/alta', 'ConsultoriosController@create');
+
+/***************************************************/
 Route::get('/blog', 'PostsController@index');
 
 Route::get('/date', function()
@@ -209,12 +224,4 @@ Route::get('/oficinaAlta', function()
 	return view('oficinaAlta');
 });
 
-Route::get('/especialista', function()
-{
-	return view('especialista');
-});
 
-Route::get('/especialistaAlta', function()
-{
-	return view('especialistaAlta');
-});

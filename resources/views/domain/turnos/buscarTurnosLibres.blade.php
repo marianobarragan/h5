@@ -103,11 +103,8 @@
 			            </div>
 			        </div>
 			        <hr>
+			        <hr>
 			</div>
-		
-		<hr>
-
-        <hr>
 
         <hr>
 		<div class="col-sm-6 " align= "left">

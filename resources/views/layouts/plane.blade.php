@@ -17,6 +17,6 @@
 <body>
 	@yield('body')
 	<script src="{{ mix("assets/scripts/frontend.js") }}" type="text/javascript"></script>
-	<!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/cupertino/jquery-ui.css"> -->
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/cupertino/jquery-ui.css"> 
 </body>
 </html>
