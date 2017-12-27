@@ -30,10 +30,6 @@
                             @include('menus.sidebar.guest')
                         @endif
 
-                        
-                        
-
-
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->

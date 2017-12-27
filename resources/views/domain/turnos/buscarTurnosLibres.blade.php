@@ -134,12 +134,11 @@
 		<table class="table table-bordered" id="turnos">
 			<thead>
 				<tr>
-					<th>Name</th>
-					<th>Email</th>
-					<th>Address</th>
-					<th>Address</th>
-					<th>Address</th>
-
+					<th>id</th>
+					<th>nombre</th>
+					<th>codigo2</th>
+					<th>codigo3</th>
+					<th>codigoNumerico</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -149,7 +148,7 @@
 					<td>{{$pais->nombre}}</td>
 					<td>{{$pais->codigo2}}</td>
 					<td>{{$pais->codigo3}}</td>
-					<td>{{$pais->codigoNumerico}}</td>
+					<td><a href="#">{{$pais->codigoNumerico}}</a></td>
 					
 				</tr>
 				@endforeach

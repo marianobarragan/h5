@@ -16,7 +16,7 @@
 		</div>
 		
 		<div class="col-sm-6 " align= "left">
-			<a href="{{ url ('oficina') }}">
+			<a href="{{ url ('documentos') }}">
 				@include('widgets.button', array('class'=>'default', 'value'=>'Volver'))
 			</a>
 		</div>

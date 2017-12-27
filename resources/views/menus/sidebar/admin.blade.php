@@ -97,6 +97,9 @@
                         <li {{ (Request::is('*pacientes') ? 'class="active"' : '') }}>
                             <a href="{{ url ('pacientes') }}"><i class="fa fa-user fa-fw"></i> Nuevo paciente</a>
                         </li>
+                        <li {{ (Request::is('*turnos') ? 'class="active"' : '') }}>
+                            <a href="{{ url ('turnos') }}"><i class="fa fa-desktop fa-fw"></i> ABM Turnos</a>
+                        </li>
                         <li {{ (Request::is('*documentos') ? 'class="active"' : '') }}>
                             <a href="{{ url ('documentos') }}"><i class="fa fa-book fa-fw"></i> ABM Documento persona</a>
                         </li>
@@ -111,9 +114,6 @@
                         </li>
                         <li {{ (Request::is('*especialidades') ? 'class="active"' : '') }}>
                             <a href="{{ url ('especialidades') }}"><i class="fa fa-heart fa-fw"></i> ABM Especialidades</a>
-                        </li>
-                        <li {{ (Request::is('*turnos') ? 'class="active"' : '') }}>
-                            <a href="{{ url ('turnos') }}"><i class="fa fa-desktop fa-fw"></i> ABM Turnos</a>
                         </li>
                         <li {{ (Request::is('*oficinas') ? 'class="active"' : '') }}>
                             <a href="{{ url ('oficinas') }}"><i class="fa fa-building-o fa-fw"></i> ABM Oficinas</a>
