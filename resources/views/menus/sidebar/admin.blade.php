@@ -124,3 +124,6 @@
                         <li {{ (Request::is('*especialistas') ? 'class="active"' : '') }}>
                             <a href="{{ url ('especialistas') }}"><i class="fa fa-user-md fa-fw"></i> ABM Especialistas</a>
                         </li>
+                        <li {{ (Request::is('*modificarRol') ? 'class="active"' : '') }}>
+                            <a href="{{ url ('modificarRol') }}"><i class="fa fa-users fa-fw"></i> Modificar Rol Usuarios</a>
+                        </li>
