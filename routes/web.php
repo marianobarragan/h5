@@ -193,6 +193,11 @@ Route::post('/consultorios', 'ConsultoriosController@store');
 Route::get('/consultorios/alta', 'ConsultoriosController@create');
 
 /***************************************************/
+
+Route::get('/modificarRol', 'ModificarRolController@index');
+
+
+
 Route::get('/blog', 'PostsController@index');
 
 Route::get('/date', function()
