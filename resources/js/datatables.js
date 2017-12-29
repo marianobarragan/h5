@@ -37,7 +37,8 @@ $(document).ready(function(){
                         {data:"name"},
                         {data:"email"},
                         {data:"id_rol"}
-                        {data:"descripcion_rol"}                        
+                        {data:"descripcion_rol"}
+                        {data:"roles"}                          
                 ],
                 "language": idioma_español
         });

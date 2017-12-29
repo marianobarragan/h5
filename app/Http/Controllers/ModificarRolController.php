@@ -13,7 +13,8 @@ class ModificarRolController extends Controller
 
     public function index(){
     	$users = \App\User::all()->take(10);
-    	return view('domain.modificarRol.index',compact('users'));
+    	$roles = \App\Rol::all();
+    	return view('domain.modificarRol.index',compact('users','roles'));
     }
     
 }
