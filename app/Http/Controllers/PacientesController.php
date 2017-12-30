@@ -32,12 +32,12 @@ class PacientesController extends Controller
 		$paises = Pais::orderBy('nombre')->get();
 		$estados = EstadoCivil::orderBy('id_estado_civil','DESC')->get();
     	
-    	return view('domain.pacientes.pacienteAlta',compact(['obras','sexos','paises','estados','documentos']));
+    	return view('domain.pacientes.pacienteAlta', compact(['obras','sexos','paises','estados','documentos']));
     }
 
     public function store(AltaPacienteRequest $request){
         
-		$domicilio = Domicilio::create(request(['calle','altura','distrito','barrio']));
+		$domicilioCreado = Domicilio::create(request(['calle','altura','distrito','barrio']));
 		$paciente = new Paciente();
 		// $request->except(['key1']);
 
@@ -50,11 +50,7 @@ class PacientesController extends Controller
         $paciente->id_pais = request('id_pais');
         $paciente->esta_vivo = request('esta_vivo');
         
-        $paciente->id_documento = request('id_documento');
-        $paciente->id_documento = request('id_documento');
-        $paciente->id_documento = request('id_documento');
-		
-		
+        $paciente->id_domicilio = $domicilioCreado['id_domicilio'];
 		$paciente->nombre = request('nombre');
 		$paciente->apellido = request('apellido');
     	

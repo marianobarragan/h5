@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Oficina;
+use \App\Rules\LetrasYEspacios;
 
 class OficinasController extends Controller
 {
@@ -29,16 +31,27 @@ class OficinasController extends Controller
     public function create(){
     	return view('domain.oficinas.alta');
     }
-/*
+
     public function store(){
-    	$especialidad = request()->validate([
-            'descripcion_especialidad' => 'required',
+    	$oficina = request()->validate([
+            'descripcion' => 'required'
         ]);
 
-        Especialidad::create($especialidad);
+        $domicilio = request()->validate([
+            'calle' => ['nullable', new LetrasYEspacios],
+            'altura' => 'nullable|integer',
+            'distrito' => ['nullable', new LetrasYEspacios],
+            'barrio' => ['required', new LetrasYEspacios]
+        ]);
 
-        return redirect('/especialidades')->with('message', 'Especialidad creada correctamente!');
+        $domicilioCreado = \App\Domicilio::create($domicilio);
+
+        $oficina['id_domicilio'] = $domicilioCreado['id_domicilio'];
+
+        Oficina::create($oficina);
+
+        return redirect('/oficinas')->with('message', 'Oficina creada correctamente!');
     }
-*/
+
 
 }

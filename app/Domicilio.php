@@ -14,6 +14,11 @@ class Domicilio extends Model
     protected $fillable = ['calle','altura','distrito','barrio'];
 
     public function paciente(){
-        return $this->hasMany('App\Paciente');
+        return $this->belongsTo('App\Paciente');
     }
+
+    public function oficina()
+    {
+        return $this->belongsTo('App\Oficina');
+    }     
 }

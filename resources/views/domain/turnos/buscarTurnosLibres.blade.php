@@ -24,6 +24,7 @@
 		            <label class="col-sm-4 control-label"> Especialista</label>
 		            <div class="col-sm-8">
 		                <select class="form-control" name="id_especialista">
+		                	<option value=""> - </option>
 		                    @foreach($especialistas as $especialista)
 		                        <option value="{{$especialista->id_especialista}}">{{$especialista->apellido}}, {{$especialista->nombre}}</option>
 		                    @endforeach
@@ -61,6 +62,7 @@
 			            <label class="col-sm-4 control-label"> Barrio</label>
 			            <div class="col-sm-8">
 			                <select class="form-control" name="id_oficina">
+			                    <option value=""> - </option>
 			                    @foreach($oficinas as $oficina)
 			                        <option value="{{$oficina->id_oficina}}">{{$oficina->barrio}} </option>
 			                    @endforeach

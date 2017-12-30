@@ -70,6 +70,7 @@
             </div>
         </div>
         <!--Datos Domicilio-->
+        @include('domain.domicilios.domicilioCampos')
         <div class="form-group" style="padding-bottom: 8px">
 			<label class="col-sm-4 control-label"> Calle</label>
 			<div class="col-sm-8">

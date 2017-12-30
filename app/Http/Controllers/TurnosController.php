@@ -32,14 +32,14 @@ class TurnosController extends Controller
             'id_especialidad' => 'required|integer|exists:especialidades',
             'id_especialista' => 'nullable|integer|exists:especialistas',
             'id_oficina' => 'nullable|integer|exists:oficinas', 
-            'fecha_desde' => 'nullable|date|exists:oficinas',
-            'fecha_hasta' => 'nullable|date|exists:oficinas',
+            'fecha_desde' => 'required|date',
+            'fecha_hasta' => 'required|date',
             'horario_inicio' => 'required|date_format:H:i',
             'horario_finalizacion' => 'required|date_format:H:i'
         ]);
 
 		//id_turno, 
 
-        return redirect('/turnos/');
+        return redirect('/turnos/')->with('message', 'Turno consultado');
     }
 }

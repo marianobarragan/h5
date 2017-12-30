@@ -2,6 +2,8 @@
 @section('page_heading','Oficinas')
 @section('section')
 
+@include('layouts.flash')
+
 <div class="col-lg-12">
 	<h4>Descripcion de la página</h4>
 </div>

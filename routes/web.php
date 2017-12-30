@@ -174,6 +174,8 @@ Route::get('/turnos/consultar', 'TurnosController@consultar');
 
 Route::get('/oficinas', 'OficinasController@index');
 
+Route::post('/oficinas', 'OficinasController@store');
+
 Route::get('/oficinas/alta', 'OficinasController@create');
 
 /***************************************************/

@@ -12,4 +12,9 @@ class Oficina extends Model
     const UPDATED_AT = 'ultima_modificacion';
 
     protected $fillable = ['descripcion','id_domicilio'];
+
+    public function domicilio()
+    {
+        return $this->hasOne('App\Domicilio');
+    }    
 }

@@ -53,7 +53,7 @@ class AltaPacienteRequest extends FormRequest
             'calle' => 'nullable|alpha',
             'altura' => 'nullable|integer',
             'distrito' => 'nullable|alpha',
-            'barrio' => 'nullable|alpha'
+            'barrio' => 'required|alpha'
         ];
     }
 }
