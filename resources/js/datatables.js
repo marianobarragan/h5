@@ -28,6 +28,22 @@ $(document).ready(function(){
         });
 });
 
+$(document).ready(function(){
+        $('#usuarios').DataTable({
+                "processing": true,
+                "serverSide": true,
+                "columns": [
+                        {data:"id"},
+                        {data:"name"},
+                        {data:"email"},
+                        {data:"id_rol"}
+                        {data:"descripcion_rol"}
+                        {data:"roles"}                          
+                ],
+                "language": idioma_español
+        });
+});
+
 var idioma_español = {
     "sProcessing":     "Procesando...",
     "sLengthMenu":     "Mostrar _MENU_ registros",
