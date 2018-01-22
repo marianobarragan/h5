@@ -26,29 +26,27 @@ class TurnosController extends Controller
     	$paises = \App\Pais::all()->take(10);
 
         if ($request->isMethod('post')) {
+            //dd($request);
             $this->validate(request(),[
                 'id_especialidad' => 'required|integer|exists:especialidades',
                 'id_especialista' => 'nullable|integer|exists:especialistas',
                 'id_oficina' => 'nullable|integer|exists:oficinas', 
-                'fecha_desde' => 'required|date',
-                'fecha_hasta' => 'required|date',
+                'fecha_desde' => 'required|date_format:"d/m/Y"',
+                'fecha_hasta' => 'required|date_format:"d/m/Y"|after:fecha_desde',
                 'horario_inicio' => 'required|date_format:H:i',
                 'horario_finalizacion' => 'required|date_format:H:i'
             ]);
-
+/*
             $turnos = DB::select(' 
 
                 select * from hospitales.dias_semana
-            ');
+            ');*/
         }
 
     	return view('domain.turnos.buscarTurnosLibres',compact(['especialistas','especialidades','oficinas','dias','paises','turnos']));
     }
 
     public function buscarTurnosLibres(){
-    	/*
-    	
-*/
 
 
         return redirect('/turnos/')->with('message', 'Turno consultado');
