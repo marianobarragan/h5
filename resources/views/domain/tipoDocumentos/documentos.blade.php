@@ -18,19 +18,6 @@
 		@include('widgets.button', array('class'=>'danger', 'value'=>'Baja', 'size'=>'lg btn-block'))
 	</div>
 
-	<ul>
-		
-		@foreach ($documentos as $documento)
-			<li> 
-				{{ $documento -> id_documento}} 
-			</li>
-			<li> 
-				{{ $documento -> tipo_documento}} 
-			</li>
-		@endforeach
-		
-	</ul>
-
 </div>
 
 @stop

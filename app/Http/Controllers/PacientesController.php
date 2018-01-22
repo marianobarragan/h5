@@ -41,7 +41,6 @@ class PacientesController extends Controller
 		$paciente = new Paciente();
 		// $request->except(['key1']);
 
-        
         $paciente->id_documento = request('id_documento');
         $paciente->id_estado_civil = request('id_estado_civil');
         $paciente->numero_historia_clinica = request('numero_historia_clinica');
@@ -55,6 +54,9 @@ class PacientesController extends Controller
 		$paciente->apellido = request('apellido');
     	
     	$paciente->save();
+        
+        $domicilioCreado->paciente_id = $paciente->id_paciente;
+        $domicilioCreado->save();
         //Paciente::create($paciente);
 
     	return redirect('/pacientes')->with('message', 'Paciente registrado correctamente!');

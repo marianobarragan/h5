@@ -42,13 +42,16 @@ class OficinasController extends Controller
             'altura' => 'nullable|integer',
             'distrito' => ['nullable', new LetrasYEspacios],
             'barrio' => ['required', new LetrasYEspacios]
-        ]);
+        ]); 
 
         $domicilioCreado = \App\Domicilio::create($domicilio);
 
         $oficina['id_domicilio'] = $domicilioCreado['id_domicilio'];
 
-        Oficina::create($oficina);
+        $oficina = Oficina::create($oficina);
+
+        $domicilioCreado['oficina_id'] = $oficina['id_oficina'];
+        $domicilioCreado->save();
 
         return redirect('/oficinas')->with('message', 'Oficina creada correctamente!');
     }

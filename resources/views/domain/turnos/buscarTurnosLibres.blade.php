@@ -12,12 +12,14 @@
 		<hr>
 </div>
 <div class="col-lg-10 col-md-offset-1">
-	@include('layouts.errors')
+	
 	@section ('panel2_panel_title', 'Consultar Turnos Libres')
 	@section ('panel2_panel_body')
-
+	@include('layouts.warnings')
+	
 	<form role="form" method="POST" action="/turnos/consultar">
 		{{ csrf_field() }}
+
 			<div class="col-sm-6">
 
 				<div class="form-group" style="padding-bottom: 8px">
@@ -64,7 +66,7 @@
 			                <select class="form-control" name="id_oficina">
 			                    <option value=""> - </option>
 			                    @foreach($oficinas as $oficina)
-			                        <option value="{{$oficina->id_oficina}}">{{$oficina->barrio}} </option>
+			                        <option value="{{$oficina->id_oficina}}">{{$oficina->domicilio->barrio}} </option>
 			                    @endforeach
 			                </select>
 			            </div>
@@ -123,7 +125,14 @@
 
 <hr>
 </div>
-	<div class="col-lg-10 col-md-offset-1">
+	
+	@if(!empty($turnos)) 
+	
+	<div class="col-lg-10 col-md-offset-1" id="resultados_busqueda_turnos">
+
+		@foreach($turnos as $t)
+		{{$t->dia}}
+		@endforeach
 
 		@section ('panel4_panel_title', 'Turnos disponibles')
 		@section ('panel4_panel_body')
@@ -163,6 +172,7 @@
 		<hr>
 		
 	</div>
-
+	
+	@endif
 
 @stop

@@ -15,6 +15,6 @@ class Oficina extends Model
 
     public function domicilio()
     {
-        return $this->hasOne('App\Domicilio');
+        return $this->hasOne(Domicilio::class,'id_domicilio','id_domicilio');
     }    
 }

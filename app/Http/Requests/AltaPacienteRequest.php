@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use \App\Rules\LetrasYEspacios;
 
 class AltaPacienteRequest extends FormRequest
 {
@@ -13,10 +14,7 @@ class AltaPacienteRequest extends FormRequest
      */
     public function authorize()
     {
-        if (auth()->check()){
-            return true;
-        } 
-        return false;
+        return auth()->check();
     }
 
     /**
@@ -47,13 +45,13 @@ class AltaPacienteRequest extends FormRequest
             'id_user' => 'nullable|integer',
             'valor_obra_social' => 'nullable',
             'valor_documento' => 'nullable',
-            'nombre' => 'nullable|alpha',
-            'apellido' => 'nullable|alpha',
+            'nombre' => ['nullable', new LetrasYEspacios],
+            'apellido' => ['nullable', new LetrasYEspacios],
 
-            'calle' => 'nullable|alpha',
+            'calle' => ['nullable', new LetrasYEspacios],
             'altura' => 'nullable|integer',
-            'distrito' => 'nullable|alpha',
-            'barrio' => 'required|alpha'
+            'distrito' => ['nullable', new LetrasYEspacios],
+            'barrio' => ['required', new LetrasYEspacios]
         ];
     }
 }

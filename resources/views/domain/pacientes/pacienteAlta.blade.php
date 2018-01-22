@@ -8,7 +8,7 @@
   	<div class="col-lg-6 col-md-offset-2">
     <form role="form" method="POST" action="/pacientes" class="form-horizontal" >
         {{ csrf_field() }}
-        <h3>Descripción de la página </h3>
+        <h3>Ingrese los datos del nuevo paciente: </h3>
         <hr>
         <div class="form-group" style="padding-bottom: 8px">
 			<label class="col-sm-4 control-label">Nombre Paciente</label>
@@ -71,6 +71,7 @@
         </div>
         <!--Datos Domicilio-->
         @include('domain.domicilios.domicilioCampos')
+        <!--
         <div class="form-group" style="padding-bottom: 8px">
 			<label class="col-sm-4 control-label"> Calle</label>
 			<div class="col-sm-8">
@@ -98,7 +99,7 @@
             	<input class="form-control" placeholder="Ingrese el barrio del domicilio" name="barrio">
             </div>
         </div>
-
+    -->
         <div class="form-group" style="padding-bottom: 8px">
 			<label class="col-sm-4 control-label">Fecha nacimiento</label>
 			<div class="col-sm-8">

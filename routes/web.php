@@ -166,7 +166,7 @@ Route::get('/especialidades/alta', 'EspecialidadesController@create');
 
 Route::get('/turnos', 'TurnosController@index');
 
-Route::post('/turnos/consultar', 'TurnosController@buscarTurnosLibres');
+Route::post('/turnos/consultar', 'TurnosController@consultar');
 
 Route::get('/turnos/consultar', 'TurnosController@consultar');
 

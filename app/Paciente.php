@@ -13,6 +13,10 @@ class Paciente extends Model
 
     protected $guarded = ['id_paciente','creado','ultima_modificacion','id_usuario'];
 
+    protected $casts = [
+        'esta_vivo' => 'boolean',
+    ];
+
     public function obra_social(){
         return $this->belongsTo('App\ObraSocial','id_obra_social');
     }

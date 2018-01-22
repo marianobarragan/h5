@@ -11,7 +11,7 @@ class Domicilio extends Model
     const CREATED_AT = 'creado';
     const UPDATED_AT = 'ultima_modificacion';
 
-    protected $fillable = ['calle','altura','distrito','barrio'];
+    protected $fillable = ['calle','altura','distrito','barrio','oficina_id','paciente_id'];
 
     public function paciente(){
         return $this->belongsTo('App\Paciente');
@@ -19,6 +19,6 @@ class Domicilio extends Model
 
     public function oficina()
     {
-        return $this->belongsTo('App\Oficina');
+        return $this->belongsTo(Oficina::class,'id_oficina','id_oficina');
     }     
 }
