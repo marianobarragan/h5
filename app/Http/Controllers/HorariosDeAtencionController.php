@@ -72,7 +72,7 @@ class HorariosDeAtencionController extends Controller
 
     public function delete(HorarioDeAtencion $horarioDeAtencion){
     
-        HorarioDeAtencion::delete($horarioDeAtencion);
+        $horarioDeAtencion->delete();
         return redirect('/horarios')->with('message', 'Horario de Atención eliminado correctamente!');
     }
 }
