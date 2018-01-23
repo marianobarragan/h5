@@ -109,21 +109,27 @@
                         <li {{ (Request::is('*sexo') ? 'class="active"' : '') }}>
                             <a href="{{ url ('sexo') }}"><i class="fa fa-users fa-fw"></i> ABM Sexo</a>
                         </li>
-                        <li {{ (Request::is('*horarios') ? 'class="active"' : '') }}>
-                            <a href="{{ url ('horarios') }}"><i class="fa fa-clock-o fa-fw"></i> ABM Horario Atencion</a>
-                        </li>
-                        <li {{ (Request::is('*especialidades') ? 'class="active"' : '') }}>
-                            <a href="{{ url ('especialidades') }}"><i class="fa fa-heart fa-fw"></i> ABM Especialidades</a>
-                        </li>
-                        <li {{ (Request::is('*oficinas') ? 'class="active"' : '') }}>
-                            <a href="{{ url ('oficinas') }}"><i class="fa fa-building-o fa-fw"></i> ABM Oficinas</a>
-                        </li>
-                        <li {{ (Request::is('*consultorios') ? 'class="active"' : '') }}>
-                            <a href="{{ url ('consultorios') }}"><i class="fa fa-building-o fa-fw"></i> ABM Consultorios</a>
-                        </li>                        
+
                         <li {{ (Request::is('*especialistas') ? 'class="active"' : '') }}>
                             <a href="{{ url ('especialistas') }}"><i class="fa fa-user-md fa-fw"></i> ABM Especialistas</a>
                         </li>
+
+                        <li {{ (Request::is('*especialidades') ? 'class="active"' : '') }}>
+                            <a href="{{ url ('especialidades') }}"><i class="fa fa-heart fa-fw"></i> ABM Especialidades</a>
+                        </li>
+                        
+                        <li {{ (Request::is('*oficinas') ? 'class="active"' : '') }}>
+                            <a href="{{ url ('oficinas') }}"><i class="fa fa-building-o fa-fw"></i> ABM Oficinas</a>
+                        </li>
+
+                        <li {{ (Request::is('*consultorios') ? 'class="active"' : '') }}>
+                            <a href="{{ url ('consultorios') }}"><i class="fa fa-building-o fa-fw"></i> ABM Consultorios</a>
+                        </li>
+
+                        <li {{ (Request::is('*horarios') ? 'class="active"' : '') }}>
+                            <a href="{{ url ('horarios') }}"><i class="fa fa-clock-o fa-fw"></i> ABM Horario Atencion</a>
+                        </li>                        
+
                         <li {{ (Request::is('*modificarRol') ? 'class="active"' : '') }}>
                             <a href="{{ url ('modificarRol') }}"><i class="fa fa-users fa-fw"></i> Modificar Rol Usuarios</a>
                         </li>

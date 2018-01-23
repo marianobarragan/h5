@@ -154,6 +154,12 @@ Route::post('/horarios', 'HorariosDeAtencionController@store');
 
 Route::get('/horarios/alta', 'HorariosDeAtencionController@create');
 
+Route::get('/horarios/{horarioDeAtencion}/editar', 'HorariosDeAtencionController@edit');
+
+Route::put('/horarios/{horarioDeAtencion}/', 'HorariosDeAtencionController@update');
+
+Route::delete('/horarios/{horarioDeAtencion}/', 'HorariosDeAtencionController@delete');
+
 /***************************************************/
 
 Route::get('/especialidades', 'EspecialidadesController@index');

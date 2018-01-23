@@ -50,7 +50,7 @@ class OficinasController extends Controller
 
         $oficina = Oficina::create($oficina);
 
-        $domicilioCreado['oficina_id'] = $oficina['id_oficina'];
+        $domicilioCreado['id_oficina'] = $oficina['id_oficina'];
         $domicilioCreado->save();
 
         return redirect('/oficinas')->with('message', 'Oficina creada correctamente!');

@@ -12,6 +12,18 @@ $(document).ready(function(){
 	});
 });
 
+
+$(document).ready(function(){
+    $('#especialistas').DataTable({
+        "language": idioma_español
+    });
+});
+/*
+
+"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
+            $(nTd).html("<a href='tel:"+oData.TelephoneNumber+"'>"+oData.TelephoneNumber+"</a>");
+        }
+*/
 $(document).ready(function(){
         $('#turnos').DataTable({
                 "processing": true,

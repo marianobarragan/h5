@@ -12,7 +12,7 @@ class HorarioDeAtencion extends Model
     const UPDATED_AT = 'ultima_modificacion';
 
     protected $fillable = ['id_especialista','id_oficina','horario_inicio','horario_finalizacion','id_dia','id_especialidad','duracion_turnos'];
-
+    
     public function especialista()
     {
         return $this->belongsTo('App\Especialista','id_especialista');
@@ -25,7 +25,7 @@ class HorarioDeAtencion extends Model
 
     public function dia()
     {
-        return $this->belongsTo('App\Especialista','id_dia');
+        return $this->belongsTo('App\Dia','id_dia');
     }
 
     public function especialidad()
