@@ -17,7 +17,7 @@
 </div>
 
 <div class="col-lg-8 col-lg-offset-2">
-	<table class="table table-bordered" id="especialistas"> 
+	<table class="table table-bordered" id="tabla_horarios"> 
 		<thead>
 			<tr>
 				<th>Especialista</th>
@@ -42,20 +42,30 @@
 				<td>{{$horario->horario_finalizacion}}</td>
 				<td>{{$horario->duracion_turnos}}</td>
 				<td>
-					
-					<form method="GET" action="/horarios/{{$horario->id_horario_atencion}}/editar">
-        				
-        				{{ csrf_field() }}
-						<input type="submit" value="Editar" class="btn btn-primary">
-
-					</form>
-					<form method="POST" action="/horarios/{{$horario->id_horario_atencion}}">
-						
-						{{ method_field('DELETE')}}
-        				{{ csrf_field() }}
-						
-						<input type="submit" value="Eliminar" class="btn btn-danger">
-					</form>
+					<div style="width:90px;">
+						<div style="float: left; width: 45px">
+						<form method="GET" action="/horarios/{{$horario->id_horario_atencion}}/editar">
+	        				
+	        				{{ csrf_field() }}
+							<!-- <input type="submit" value="Editar" class="btn btn-primary">-->
+							<button type="submit" class="btn btn-primary" title="Editar">
+							  <i class="fa fa-edit fa-fw"></i>
+							</button>
+						</form>
+						</div>
+						<div style="float: right; width: 45px">
+						<form method="POST" action="/horarios/{{$horario->id_horario_atencion}}">
+							
+							{{ method_field('DELETE')}}
+	        				{{ csrf_field() }}
+							
+							<!-- <input type="submit" value="Eliminar" class="btn btn-danger"><i class="fa fa-user fa-fw"></i>-->
+							<button type="submit" class="btn btn-danger" title="Borrar">
+							  <i class="fa fa-times fa-fw"></i>
+							</button>						
+						</form>
+						</div>
+					</div>
 				</td>
 
 			</tr>

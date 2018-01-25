@@ -46,12 +46,7 @@ class AltaPacienteRequest extends FormRequest
             'valor_obra_social' => 'nullable',
             'valor_documento' => 'nullable',
             'nombre' => ['nullable', new LetrasYEspacios],
-            'apellido' => ['nullable', new LetrasYEspacios],
-
-            'calle' => ['nullable', new LetrasYEspacios],
-            'altura' => 'nullable|integer',
-            'distrito' => ['nullable', new LetrasYEspacios],
-            'barrio' => ['required', new LetrasYEspacios]
+            'apellido' => ['nullable', new LetrasYEspacios]
         ];
     }
 }

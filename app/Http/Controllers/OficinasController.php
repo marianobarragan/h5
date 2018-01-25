@@ -4,28 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Oficina;
-use \App\Rules\LetrasYEspacios;
+use App\Rules\LetrasYEspacios;
+use App\Http\Requests\DomicilioRequest;
 
 class OficinasController extends Controller
 {
-/*    
-    protected $primaryKey = 'id_oficina';
-    const CREATED_AT = 'creado';
-    const UPDATED_AT = 'ultima_modificacion';
 
-    protected $fillable = ['id_domicilio'];
-
-    public function domicilio()
-    {
-        return $this->hasMany('App\Domicilio','id_domicilio');
-    }
-*/
     public function __construct(){
 		$this->middleware('auth');
 	}
 
     public function index(){
-    	return view('domain.oficinas.index');
+        $oficinas = Oficina::all();
+    	return view('domain.oficinas.index',compact('oficinas'));
     }
 
     public function create(){
@@ -56,5 +47,27 @@ class OficinasController extends Controller
         return redirect('/oficinas')->with('message', 'Oficina creada correctamente!');
     }
 
+    public function edit(Oficina $oficina){
 
+        return view('domain.oficinas.modificar',compact(['oficina']));
+    }
+
+    public function update(Oficina $oficina, DomicilioRequest $domicilio){
+    
+        $oficinaRequest = request()->validate([
+            'descripcion' => 'required'
+        ]);
+
+        $oficina->update($oficinaRequest);
+        $oficina->domicilio->update($domicilio->all());
+        
+        $oficina->save();
+        return redirect('/oficinas')->with('message', 'Oficina modificada correctamente!');
+    }
+
+    public function delete(Oficina $oficina){
+    
+        //$oficina->delete();
+        return redirect('/oficinas')->with('message', 'Oficina eliminada correctamente!');
+    }
 }

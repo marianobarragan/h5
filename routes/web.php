@@ -184,6 +184,12 @@ Route::post('/oficinas', 'OficinasController@store');
 
 Route::get('/oficinas/alta', 'OficinasController@create');
 
+Route::get('/oficinas/{oficina}/editar', 'OficinasController@edit');
+
+Route::put('/oficinas/{oficina}/', 'OficinasController@update');
+
+Route::delete('/oficinas/{oficina}/', 'OficinasController@delete');
+
 /***************************************************/
 
 Route::get('/especialistas', 'EspecialistasController@index');

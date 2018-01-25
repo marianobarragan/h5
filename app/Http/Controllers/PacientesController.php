@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\AltaPacienteRequest;
+use App\Http\Requests\DomicilioRequest;
 
 use App\Paciente;
 use App\TipoDocumento;
@@ -35,9 +36,9 @@ class PacientesController extends Controller
     	return view('domain.pacientes.pacienteAlta', compact(['obras','sexos','paises','estados','documentos']));
     }
 
-    public function store(AltaPacienteRequest $request){
+    public function store(AltaPacienteRequest $request, DomicilioRequest $domicilioRequest){
         
-		$domicilioCreado = Domicilio::create(request(['calle','altura','distrito','barrio']));
+		$domicilioCreado = Domicilio::create($domicilioRequest->all());
 		$paciente = new Paciente();
 		// $request->except(['key1']);
 
@@ -55,7 +56,7 @@ class PacientesController extends Controller
     	
     	$paciente->save();
         
-        $domicilioCreado->paciente_id = $paciente->id_paciente;
+        $domicilioCreado->id_paciente = $paciente->id_paciente;
         $domicilioCreado->save();
         //Paciente::create($paciente);
 
