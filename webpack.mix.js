@@ -35,7 +35,8 @@ mix.scripts([
    'resources/js/datepicker.js',
    'resources/js/sb-admin-2.js',
    'resources/js/frontend.js',
-   'resources/js/datatables.js'
+   'resources/js/datatables.js',
+   'resources/js/dialogs.js'
 ], 'public/assets/scripts/frontend.js')
     .sourceMaps()
     .version();

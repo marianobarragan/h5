@@ -67,7 +67,7 @@ class OficinasController extends Controller
 
     public function delete(Oficina $oficina){
     
-        //$oficina->delete();
+        $oficina->delete();
         return redirect('/oficinas')->with('message', 'Oficina eliminada correctamente!');
     }
 }

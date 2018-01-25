@@ -3,6 +3,7 @@
 @section('section')
 
 @include('layouts.flash')
+@include('dialogs.confirmation')
 
 <div class="col-lg-12">
 	<h4>Descripcion de la página</h4>
@@ -43,20 +44,15 @@
         				
         				{{ csrf_field() }}
 						<input type="submit" value="Editar" class="btn btn-primary">
-						<!--<button type="submit" class="btn btn-primary">
-						  <i class="fa fa-edit fa-fw"></i>
-						</button>-->
+
 					</form>
-					<form method="POST" action="/oficinas/{{$oficina->id_oficina}}">
+					<form method="POST" action="/oficinas/{{$oficina->id_oficina}}" id="delete_form">
 						
 						{{ method_field('DELETE')}}
         				{{ csrf_field() }}
 						
-						<input type="submit" value="Eliminar" class="btn btn-danger">
-						<!--
-						<button type="submit" class="btn btn-danger">
-						  <i class="fa fa-times fa-fw"></i>
-						</button>-->
+						<input type="submit" value="Eliminar" class="btn btn-danger" onclick="return confirm('Este elemento será eliminado irreversiblemente. Está seguro?');">
+
 					</form>
 				</td>
 
@@ -64,6 +60,8 @@
 			@endforeach
 		</tbody>
 	</table>
+
 </div>
+
 
 @stop

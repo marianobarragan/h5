@@ -60,7 +60,7 @@
 	        				{{ csrf_field() }}
 							
 							<!-- <input type="submit" value="Eliminar" class="btn btn-danger"><i class="fa fa-user fa-fw"></i>-->
-							<button type="submit" class="btn btn-danger" title="Borrar">
+							<button type="submit" class="btn btn-danger" title="Borrar" onclick="return confirm('Este elemento será eliminado irreversiblemente. Está seguro?');">
 							  <i class="fa fa-times fa-fw"></i>
 							</button>						
 						</form>
