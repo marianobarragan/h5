@@ -48,7 +48,7 @@
 	        				
 	        				{{ csrf_field() }}
 							<!-- <input type="submit" value="Editar" class="btn btn-primary">-->
-							<button type="submit" class="btn btn-primary" title="Editar">
+							<button type="submit" class="btn btn-info" title="Editar">
 							  <i class="fa fa-edit fa-fw"></i>
 							</button>
 						</form>
