@@ -14,6 +14,9 @@
 
 	<link rel="stylesheet" href="{{ mix("assets/stylesheets/styles.css") }}" />
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="//cdn.datatables.net/1.10.16/css/dataTables.jqueryui.min.css">
+
+
 </head>
 <body>
 

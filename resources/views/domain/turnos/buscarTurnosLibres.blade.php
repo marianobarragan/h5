@@ -51,6 +51,7 @@
 		            <label class="col-sm-4 control-label"> Oficina</label>
 		            <div class="col-sm-8">
 		                <select class="form-control" name="id_oficina">
+		                	<option value=""> - </option>
 		                    @foreach($oficinas as $oficina)
 		                        <option value="{{$oficina->id_oficina}}">{{$oficina->descripcion}} </option>
 		                    @endforeach
@@ -128,49 +129,52 @@
 	
 	@if(!empty($turnos)) 
 	
-	<div class="col-lg-10 col-md-offset-1" id="resultados_busqueda_turnos">
-
-		@foreach($turnos as $t)
-		{{$t->dia}}
-		@endforeach
-
-		@section ('panel4_panel_title', 'Turnos disponibles')
-		@section ('panel4_panel_body')
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. 
-		<hr>
-		@section ('table_panel_title','Regular Table')
-		<table class="table table-bordered" id="turnos">
+	<div class="col-lg-10 col-md-offset-1">
+		<table class="table table-bordered" id="tabla_turnos_disponibles"> 
 			<thead>
 				<tr>
-					<th>id</th>
-					<th>nombre</th>
-					<th>codigo2</th>
-					<th>codigo3</th>
-					<th>codigoNumerico</th>
+					<th>id_turno</th>
+					<th>id_consultorio</th>
+					<th>id_especialidad</th>
+					<th>id_especialista</th>
+					<th>fecha_comienzo</th>
+					<th>fecha_finalizacion</th>
+					<th>Acción</th>
 				</tr>
 			</thead>
 			<tbody>
-				@foreach($paises as $pais)
+				@foreach($turnos as $turno)
 				<tr>
-					<td>{{$pais->id}}</td>
-					<td>{{$pais->nombre}}</td>
-					<td>{{$pais->codigo2}}</td>
-					<td>{{$pais->codigo3}}</td>
-					<td><a href="#">{{$pais->codigoNumerico}}</a></td>
 					
+					<td>{{$turno->id_turno}}</td>
+					<td>{{$turno->id_consultorio}}</td>
+					<td>{{$turno->id_especialidad}}</td>
+					<td>{{$turno->id_especialista}}</td>
+					<td>{{$turno->fecha_comienzo}}</td>
+					<td>{{$turno->fecha_finalizacion}}</td>
+					
+					<td>
+						<div style="width:90px;">
+							<div style="float: left; width: 45px">
+							<form method="GET" action="/turnos/confirmar">
+		        				
+		        				{{ csrf_field() }}
+								<input type="submit" value="Pedir turno" class="btn btn-primary">
+								<!--
+								<button type="submit" class="btn btn-info" title="Editar">
+								  <i class="fa fa-edit fa-fw"></i>
+								</button>
+								-->
+							</form>
+							</div>
+
+						</div>
+					</td>
+
 				</tr>
 				@endforeach
 			</tbody>
 		</table>
-
-		@endsection
-		@include('widgets.panel', array('class'=>'info', 'header'=> true, 'as'=>'panel4'))	
-
-		<hr>
-		
 	</div>
 	
 	@endif

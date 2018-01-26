@@ -37,6 +37,10 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
+    $('#tabla_turnos_disponibles').DataTable();
+});
+
+$(document).ready(function(){
 	$('#myTable').DataTable({
 		"processing": true,
         "serverSide": true,

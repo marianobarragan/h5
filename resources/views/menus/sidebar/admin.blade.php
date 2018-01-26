@@ -98,7 +98,7 @@
                             <a href="{{ url ('pacientes') }}"><i class="fa fa-user fa-fw"></i> Nuevo paciente</a>
                         </li>
                         <li {{ (Request::is('*turnos') ? 'class="active"' : '') }}>
-                            <a href="{{ url ('turnos') }}"><i class="fa fa-desktop fa-fw"></i> ABM Turnos</a>
+                            <a href="{{ url ('turnos') }}"><i class="fa fa-desktop fa-fw"></i> Pedir un Turno</a>
                         </li>
                         <li {{ (Request::is('*documentos') ? 'class="active"' : '') }}>
                             <a href="{{ url ('documentos') }}"><i class="fa fa-book fa-fw"></i> ABM Documento persona</a>
