@@ -7,8 +7,6 @@ select * from domicilios;
 select * from horarios_atencion;
 select * from logtable;
 
-'25-01-2018 00:00:00'
-'2017-12-10 13:00:00'
 
 CALL mostrarTurnosDisponibles(4,NULL,NULL,'BARRIO','2018-01-26 13:00:00','2018-01-30 14:50:00');
 /*
